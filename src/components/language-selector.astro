@@ -1,0 +1,79 @@
+---
+// Language selector component for switching between IT and EN
+---
+
+<div class="language-selector relative inline-block">
+  <button
+    id="lang-button"
+    class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-[#333333] hover:text-[#005bea] transition"
+    aria-label="Select language"
+  >
+    <span id="current-lang">IT</span>
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+
+  <div
+    id="lang-menu"
+    class="absolute right-0 mt-2 w-24 bg-white rounded-lg shadow-lg border border-gray-200 hidden z-50"
+  >
+    <button
+      data-lang="it"
+      class="lang-option w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition first:rounded-t-lg"
+    >
+      🇮🇹 IT
+    </button>
+    <button
+      data-lang="en"
+      class="lang-option w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition last:rounded-b-lg"
+    >
+      🇬🇧 EN
+    </button>
+  </div>
+</div>
+
+<script>
+  import { getCurrentLanguage, setLanguage, type Language } from '@/utils/i18n';
+
+  // Initialize language selector
+  function initLanguageSelector() {
+    const button = document.getElementById('lang-button');
+    const menu = document.getElementById('lang-menu');
+    const currentLangSpan = document.getElementById('current-lang');
+    const langOptions = document.querySelectorAll('.lang-option');
+
+    if (!button || !menu || !currentLangSpan) return;
+
+    // Set initial language display
+    const currentLang = getCurrentLanguage();
+    currentLangSpan.textContent = currentLang.toUpperCase();
+
+    // Toggle menu on button click
+    button.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menu.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', () => {
+      menu.classList.add('hidden');
+    });
+
+    // Handle language selection
+    langOptions.forEach((option) => {
+      option.addEventListener('click', (e) => {
+        const lang = (e.currentTarget as HTMLElement).getAttribute('data-lang') as Language;
+        setLanguage(lang);
+        window.location.reload(); // Reload to apply new language
+      });
+    });
+  }
+
+  // Run on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLanguageSelector);
+  } else {
+    initLanguageSelector();
+  }
+</script>

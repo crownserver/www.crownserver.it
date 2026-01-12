@@ -1,0 +1,24 @@
+---
+import crownSvg from "@/assets/crown.svg";
+
+interface Props {
+  size?: 'small' | 'medium' | 'large';
+}
+
+const { size = 'medium' } = Astro.props;
+
+const sizeConfig = {
+  small: { height: 'h-8', textClass: 'text-xl' },
+  medium: { height: 'h-10', textClass: 'text-2xl' },
+  large: { height: 'h-16', textClass: 'text-4xl' }
+};
+
+const config = sizeConfig[size];
+---
+
+<div class="flex items-center gap-2">
+  <img src={crownSvg.src} alt="CrownServer" class={config.height} />
+  <span class={`font-bold ${config.textClass} tracking-tight`}>
+    CROWN<span class="text-gradient-crown">SERVER</span>
+  </span>
+</div>

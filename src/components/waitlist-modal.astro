@@ -1,0 +1,134 @@
+---
+// Waitlist modal component (design only, no backend)
+---
+
+<div
+  id="waitlist-modal"
+  class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4"
+>
+  <div class="bg-white rounded-2xl max-w-md w-full p-8 relative animate-scale-in">
+    {/* Close button */}
+    <button
+      id="close-modal"
+      class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition"
+      aria-label="Close modal"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    {/* Content */}
+    <div id="modal-form" class="mt-2">
+      <h3 class="text-3xl font-bold text-[#333333] mb-2">
+        Unisciti alla Waitlist
+      </h3>
+      <p class="text-gray-600 mb-6">
+        Sii tra i primi a provare CrownServer quando lanceremo i nostri servizi
+      </p>
+
+      {/* Form (placeholder, non-functional) */}
+      <form id="waitlist-form" class="space-y-4">
+        <div>
+          <input
+            type="email"
+            id="waitlist-email"
+            placeholder="Il tuo indirizzo email"
+            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#00c6fb] focus:outline-none transition"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full gradient-crown text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition"
+        >
+          Iscriviti
+        </button>
+      </form>
+    </div>
+
+    {/* Success message (hidden by default) */}
+    <div id="modal-success" class="hidden text-center py-8">
+      <div class="w-16 h-16 gradient-crown rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+      <h3 class="text-2xl font-bold text-[#333333] mb-2">
+        Grazie!
+      </h3>
+      <p class="text-gray-600">
+        Ti contatteremo presto con gli aggiornamenti su CrownServer.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initWaitlistModal() {
+    const modal = document.getElementById('waitlist-modal');
+    const closeBtn = document.getElementById('close-modal');
+    const form = document.getElementById('waitlist-form');
+    const formContainer = document.getElementById('modal-form');
+    const successContainer = document.getElementById('modal-success');
+
+    if (!modal || !closeBtn || !form || !formContainer || !successContainer) return;
+
+    // Close modal
+    const closeModal = () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      // Reset form after closing
+      setTimeout(() => {
+        formContainer.classList.remove('hidden');
+        successContainer.classList.add('hidden');
+        form.reset();
+      }, 300);
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // Handle form submission (placeholder)
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Show success message
+      formContainer.classList.add('hidden');
+      successContainer.classList.remove('hidden');
+
+      // Auto-close after 3 seconds
+      setTimeout(closeModal, 3000);
+    });
+
+    // Expose openModal function globally
+    (window as any).openWaitlistModal = () => {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    };
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initWaitlistModal);
+  } else {
+    initWaitlistModal();
+  }
+</script>
+
+<style>
+  @keyframes scale-in {
+    from {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.2s ease-out;
+  }
+</style>

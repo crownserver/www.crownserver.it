@@ -1,40 +1,33 @@
 ---
 import Container from "@/components/container.astro";
-import Link from "@/components/ui/link.astro";
+import Logo from "@/components/logo.astro";
+import LanguageSelector from "@/components/language-selector.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
   {
-    title: "Features",
-    path: "#",
-    children: [
-      { title: "Action", path: "/" },
-      { title: "Another action", path: "#" },
-      { title: "Dropdown Submenu", path: "#" },
-      { title: "404 Page", path: "/404" },
-    ],
+    title: "Prodotti",
+    path: "/products",
   },
   {
-    title: "Pricing",
-    path: "/pricing",
-  },
-  {
-    title: "About",
+    title: "Chi Siamo",
     path: "/about",
   },
   {
-    title: "Blog",
-    path: "/blog",
-  },
-  {
-    title: "Contact",
+    title: "Contatti",
     path: "/contact",
   },
   {
-    title: "Pro Version",
-    badge: true,
-    path: "https://astroship-pro.web3templates.com/",
+    title: "Social",
+    path: "#",
+    children: [
+      { title: "Discord", path: "https://discord.gg/crownserver" },
+      { title: "X (Twitter)", path: "https://x.com/crownserver" },
+      { title: "Instagram", path: "https://instagram.com/crownserver" },
+      { title: "TikTok", path: "https://tiktok.com/@crownserver" },
+      { title: "Threads", path: "https://threads.net/@crownserver" },
+    ],
   },
 ];
 ---
@@ -43,10 +36,8 @@ const menuitems = [
   <header class="flex flex-col lg:flex-row justify-between items-center my-5">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/" class="text-lg"
-          ><span class="font-bold text-slate-800">Astro</span><span
-            class="text-slate-500">ship</span
-          >
+        <a href="/">
+          <Logo size="medium" />
         </a>
         <div class="block lg:hidden">
           <MenuIcon class="w-4 h-4 text-gray-800" />
@@ -69,13 +60,8 @@ const menuitems = [
                   <li>
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
+                      class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-[#005bea] transition">
                       <span> {item.title}</span>
-                      {item.badge && (
-                        <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
-                          New
-                        </span>
-                      )}
                     </a>
                   </li>
                 )}
@@ -83,16 +69,11 @@ const menuitems = [
             ))
           }
         </ul>
-        <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="#" style="muted" block size="md">Log in</Link>
-          <Link href="#" size="md" block>Sign up</Link>
-        </div>
       </MenuItems>
     </Astronav>
     <div>
       <div class="hidden lg:flex items-center gap-4">
-        <a href="#">Log in</a>
-        <Link href="#" size="md">Sign up</Link>
+        <LanguageSelector />
       </div>
     </div>
   </header>

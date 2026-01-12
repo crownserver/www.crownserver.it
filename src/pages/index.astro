@@ -1,17 +1,78 @@
 ---
-import Container from "@/components/container.astro";
-import Cta from "@/components/cta.astro";
-import Features from "@/components/features.astro";
-import Hero from "@/components/hero.astro";
-import Logos from "@/components/logos.astro";
 import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/container.astro";
+import Sectionhead from "@/components/sectionhead.astro";
+import ServiceCards from "@/components/service-cards.astro";
+import WhyChooseUs from "@/components/why-choose-us.astro";
+import WaitlistCta from "@/components/waitlist-cta.astro";
+import Button from "@/components/ui/button.astro";
+import { Icon } from "astro-icon/components";
 ---
 
-<Layout title="">
+<Layout title="Home">
+  {/* Hero Section */}
   <Container>
-    <Hero />
-    <Features />
-    <Logos />
-    <Cta />
+    <main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-20 md:pb-24 gap-12">
+      <div class="order-2 lg:order-1">
+        <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
+          Il cloud <span class="text-gradient-crown">semplice</span> per tutta la famiglia
+        </h1>
+        <p class="text-lg mt-6 text-gray-600 max-w-xl leading-relaxed">
+          Soluzioni cloud affidabili e sicure pensate per le tue esigenze. Archiviazione, email e backup automatico in un unico posto.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <Button
+            size="lg"
+            onclick="(window as any).openWaitlistModal()"
+            class="flex gap-2 items-center justify-center"
+          >
+            <Icon class="text-white w-5 h-5" name="bx:mail-send" />
+            Unisciti alla Waitlist
+          </Button>
+          <Button
+            size="lg"
+            style="outline"
+            onclick="window.location.href='/products'"
+            class="flex gap-2 items-center justify-center"
+          >
+            Scopri i Servizi
+            <Icon class="text-[#333333] w-4 h-4" name="bx:right-arrow-alt" />
+          </Button>
+        </div>
+      </div>
+
+      {/* Hero Image Placeholder */}
+      <div class="order-1 lg:order-2">
+        <div class="w-full aspect-square max-w-lg mx-auto gradient-crown rounded-3xl flex items-center justify-center relative overflow-hidden">
+          {/* Decorative circles */}
+          <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-10 left-10 w-32 h-32 bg-white rounded-full"></div>
+            <div class="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-white rounded-full"></div>
+          </div>
+          {/* Crown icon */}
+          <div class="relative z-10">
+            <Icon name="bx:crown" class="w-48 h-48 text-white" />
+          </div>
+        </div>
+      </div>
+    </main>
   </Container>
+
+  {/* Services Section */}
+  <section class="mt-24 mb-16">
+    <Sectionhead>
+      <Fragment slot="title">I Nostri Servizi</Fragment>
+      <Fragment slot="desc">
+        Tutto ciò di cui hai bisogno per proteggere e gestire i tuoi dati nel cloud
+      </Fragment>
+    </Sectionhead>
+    <ServiceCards />
+  </section>
+
+  {/* Why Choose Us Section */}
+  <WhyChooseUs />
+
+  {/* Waitlist CTA */}
+  <WaitlistCta />
 </Layout>

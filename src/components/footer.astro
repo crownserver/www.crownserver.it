@@ -1,19 +1,64 @@
-<footer class="my-20">
-  <p class="text-center text-sm text-slate-500">
-    Copyright © {new Date().getFullYear()} Astroship. All rights reserved.
-  </p>
-  <!--
-    Can we ask you a favor 🙏
-    Please keep this backlink on your website if possible.
-    or Purchase a commercial license from https://web3templates.com
-  -->
-  <p class="text-center text-xs text-slate-500 mt-1">
-    Made by <a
-      href="https://web3templates.com"
-      target="_blank"
-      rel="noopener"
-      class="hover:underline">
-      Web3Templates
-    </a>
-  </p>
+---
+import Container from "./container.astro";
+import Logo from "./logo.astro";
+import SocialLinks from "./social-links.astro";
+---
+
+<footer class="my-20 border-t border-gray-200 pt-16">
+  <Container>
+    <div class="grid md:grid-cols-3 gap-12 mb-12">
+      {/* Column 1: Logo & CrownGaming Link */}
+      <div>
+        <Logo size="medium" />
+        <p class="text-gray-600 mt-4 text-sm leading-relaxed">
+          Servizi cloud semplici, sicuri e affidabili per tutta la famiglia.
+        </p>
+        <p class="mt-6 text-sm">
+          <a
+            href="https://www.crowngaming.it"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-[#005bea] hover:underline font-medium"
+          >
+            Scopri anche CrownGaming per il gaming →
+          </a>
+        </p>
+      </div>
+
+      {/* Column 2: Quick Links */}
+      <div>
+        <h3 class="font-bold text-[#333333] mb-4">Link Rapidi</h3>
+        <ul class="space-y-3">
+          <li>
+            <a href="/products" class="text-gray-600 hover:text-[#005bea] transition text-sm">
+              Prodotti
+            </a>
+          </li>
+          <li>
+            <a href="/about" class="text-gray-600 hover:text-[#005bea] transition text-sm">
+              Chi Siamo
+            </a>
+          </li>
+          <li>
+            <a href="/contact" class="text-gray-600 hover:text-[#005bea] transition text-sm">
+              Contatti
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      {/* Column 3: Social */}
+      <div>
+        <h3 class="font-bold text-[#333333] mb-4">Seguici</h3>
+        <SocialLinks variant="default" />
+      </div>
+    </div>
+
+    {/* Bottom Copyright */}
+    <div class="border-t border-gray-200 pt-8 text-center">
+      <p class="text-sm text-gray-600">
+        Copyright © {new Date().getFullYear()} CrownServer. Tutti i diritti riservati.
+      </p>
+    </div>
+  </Container>
 </footer>

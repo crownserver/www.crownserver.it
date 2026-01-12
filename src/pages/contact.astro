@@ -2,40 +2,69 @@
 import Contactform from "@/components/contactform.astro";
 import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
+import SocialLinks from "@/components/social-links.astro";
 import Layout from "@/layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
 ---
 
-<Layout title="Contact">
+<Layout title="Contatti">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Contact</Fragment>
-      <Fragment slot="desc">We are a here to help.</Fragment>
+      <Fragment slot="title">Contattaci</Fragment>
+      <Fragment slot="desc">Hai domande? Siamo qui per aiutarti</Fragment>
     </Sectionhead>
 
-    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
+    <div class="grid md:grid-cols-2 gap-16 mx-auto max-w-5xl mt-16">
+      {/* Contact Info */}
       <div>
-        <h2 class="font-medium text-2xl text-gray-800">Contact Astroship</h2>
-        <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          Have something to say? We are here to help. Fill up the form or send
-          email or call phone.
+        <h2 class="font-bold text-3xl text-[#333333] mb-4">
+          Parliamo del tuo progetto cloud
+        </h2>
+        <p class="text-lg leading-relaxed text-gray-600 mt-4">
+          Vuoi saperne di più sui nostri servizi? Hai domande o suggerimenti?
+          Compila il form oppure scrivici direttamente via email.
         </p>
-        <div class="mt-5">
-          <div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
-            <span>1734 Sanfransico, CA 93063</span>
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
-              href="mailto:hello@astroshipstarter.com"
-              >hello@astroshipstarter.com</a
-            >
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a
-              href="tel:+1 (987) 4587 899">+1 (987) 4587 899</a
-            >
+
+        {/* Email */}
+        <div class="mt-8 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 gradient-crown rounded-lg flex items-center justify-center flex-shrink-0">
+              <Icon class="text-white w-6 h-6" name="bx:envelope" />
+            </div>
+            <div>
+              <h3 class="font-semibold text-[#333333]">Email</h3>
+              <a
+                href="mailto:staff@crownserver.it"
+                class="text-[#005bea] hover:underline"
+              >
+                staff@crownserver.it
+              </a>
+            </div>
+          </div>
+
+          {/* Social Media */}
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 gradient-crown rounded-lg flex items-center justify-center flex-shrink-0">
+              <Icon class="text-white w-6 h-6" name="bx:share-alt" />
+            </div>
+            <div>
+              <h3 class="font-semibold text-[#333333] mb-2">Social Media</h3>
+              <SocialLinks variant="default" />
+            </div>
           </div>
         </div>
+
+        {/* Note about launch */}
+        <div class="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-100">
+          <p class="text-sm text-gray-700">
+            <strong>Nota:</strong> I nostri servizi sono ancora in fase di sviluppo.
+            Se sei interessato, iscriviti alla waitlist per ricevere aggiornamenti
+            e accesso prioritario al lancio!
+          </p>
+        </div>
       </div>
+
+      {/* Contact Form */}
       <div>
         <Contactform />
       </div>

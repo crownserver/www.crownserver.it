@@ -1,0 +1,93 @@
+{
+  "nav": {
+    "products": "Prodotti",
+    "about": "Chi Siamo",
+    "contact": "Contatti",
+    "social": "Social"
+  },
+  "hero": {
+    "title": "Il cloud semplice per tutta la famiglia",
+    "subtitle": "Soluzioni cloud affidabili e sicure pensate per le tue esigenze. Archiviazione, email e backup automatico in un unico posto.",
+    "cta": "Unisciti alla Waitlist",
+    "learnMore": "Scopri di più"
+  },
+  "services": {
+    "title": "I Nostri Servizi",
+    "subtitle": "Tutto ciò di cui hai bisogno per proteggere e gestire i tuoi dati nel cloud",
+    "storage": {
+      "title": "Cloud Storage",
+      "tagline": "Archiviazione sicura per foto e documenti"
+    },
+    "mail": {
+      "title": "Cloud Mail",
+      "tagline": "Email professionale e sicura"
+    },
+    "backup": {
+      "title": "Cloud Backup",
+      "tagline": "Backup automatico dei tuoi dispositivi"
+    }
+  },
+  "whyUs": {
+    "title": "Perché Scegliere CrownServer",
+    "subtitle": "Siamo diversi dai soliti provider cloud",
+    "reason1": {
+      "title": "Semplicità Italiana",
+      "description": "Interfaccia in italiano, supporto in italiano. Niente termini tecnici complicati."
+    },
+    "reason2": {
+      "title": "Sicurezza Garantita",
+      "description": "Crittografia avanzata e server in Italia per proteggere i tuoi dati."
+    },
+    "reason3": {
+      "title": "Prezzi Trasparenti",
+      "description": "Niente costi nascosti. Paga solo per quello che usi."
+    },
+    "reason4": {
+      "title": "Supporto Sempre Disponibile",
+      "description": "Team italiano pronto ad aiutarti quando ne hai bisogno."
+    }
+  },
+  "waitlist": {
+    "title": "Unisciti alla Waitlist",
+    "subtitle": "Sii tra i primi a provare CrownServer quando lanceremo i nostri servizi",
+    "emailPlaceholder": "Il tuo indirizzo email",
+    "submitButton": "Iscriviti",
+    "successMessage": "Grazie! Ti contatteremo presto.",
+    "closeButton": "Chiudi"
+  },
+  "common": {
+    "comingSoon": "In arrivo",
+    "learnMore": "Scopri di più",
+    "readMore": "Leggi tutto"
+  },
+  "footer": {
+    "copyright": "Copyright © {year} CrownServer. Tutti i diritti riservati.",
+    "crownGaming": "Scopri anche CrownGaming per il gaming",
+    "quickLinks": "Link Rapidi",
+    "followUs": "Seguici"
+  },
+  "contact": {
+    "title": "Contattaci",
+    "subtitle": "Hai domande? Siamo qui per aiutarti",
+    "email": "Email",
+    "social": "Social Media",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "message": "Messaggio",
+      "submit": "Invia Messaggio",
+      "success": "Messaggio inviato con successo!",
+      "error": "Errore nell'invio del messaggio. Riprova."
+    }
+  },
+  "about": {
+    "title": "Chi Siamo",
+    "subtitle": "Il team dietro CrownServer",
+    "foundersTitle": "I Nostri Fondatori"
+  },
+  "products": {
+    "title": "I Nostri Prodotti",
+    "subtitle": "Soluzioni cloud complete per tutte le tue esigenze",
+    "features": "Caratteristiche"
+  }
+}

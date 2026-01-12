@@ -1,0 +1,53 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  variant?: 'default' | 'large';
+}
+
+const { variant = 'default' } = Astro.props;
+
+const socialLinks = [
+  {
+    name: 'Discord',
+    url: 'https://discord.gg/crownserver',
+    icon: 'simple-icons:discord',
+  },
+  {
+    name: 'X (Twitter)',
+    url: 'https://x.com/crownserver',
+    icon: 'simple-icons:x',
+  },
+  {
+    name: 'Instagram',
+    url: 'https://instagram.com/crownserver',
+    icon: 'simple-icons:instagram',
+  },
+  {
+    name: 'TikTok',
+    url: 'https://tiktok.com/@crownserver',
+    icon: 'simple-icons:tiktok',
+  },
+  {
+    name: 'Threads',
+    url: 'https://threads.net/@crownserver',
+    icon: 'simple-icons:threads',
+  },
+];
+
+const sizeClass = variant === 'large' ? 'w-6 h-6' : 'w-5 h-5';
+---
+
+<div class="flex items-center gap-4">
+  {socialLinks.map((social) => (
+    <a
+      href={social.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-gray-600 hover:text-[#005bea] transition"
+      aria-label={social.name}
+    >
+      <Icon name={social.icon} class={sizeClass} />
+    </a>
+  ))}
+</div>

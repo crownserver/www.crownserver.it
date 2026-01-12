@@ -1,0 +1,58 @@
+---
+import Container from './container.astro';
+import { Icon } from 'astro-icon/components';
+
+const reasons = [
+  {
+    icon: 'bx:globe',
+    title: 'Semplicità Italiana',
+    description: 'Interfaccia in italiano, supporto in italiano. Niente termini tecnici complicati.',
+  },
+  {
+    icon: 'bx:shield-alt-2',
+    title: 'Sicurezza Garantita',
+    description: 'Crittografia avanzata e server in Italia per proteggere i tuoi dati.',
+  },
+  {
+    icon: 'bx:dollar-circle',
+    title: 'Prezzi Trasparenti',
+    description: 'Niente costi nascosti. Paga solo per quello che usi.',
+  },
+  {
+    icon: 'bx:support',
+    title: 'Supporto Sempre Disponibile',
+    description: 'Team italiano pronto ad aiutarti quando ne hai bisogno.',
+  },
+];
+---
+
+<section class="my-24">
+  <Container>
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-[#333333] mb-4">
+        Perché Scegliere CrownServer
+      </h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Siamo diversi dai soliti provider cloud
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {reasons.map((reason) => (
+        <div class="text-center group">
+          <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-[#00c6fb]/10 to-[#005bea]/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <div class="w-12 h-12 gradient-crown rounded-xl flex items-center justify-center">
+              <Icon name={reason.icon} class="w-6 h-6 text-white" />
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-[#333333] mb-3">
+            {reason.title}
+          </h3>
+          <p class="text-gray-600">
+            {reason.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>

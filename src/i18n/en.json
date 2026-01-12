@@ -1,0 +1,93 @@
+{
+  "nav": {
+    "products": "Products",
+    "about": "About",
+    "contact": "Contact",
+    "social": "Social"
+  },
+  "hero": {
+    "title": "Simple cloud for the whole family",
+    "subtitle": "Reliable and secure cloud solutions designed for your needs. Storage, email, and automatic backup in one place.",
+    "cta": "Join the Waitlist",
+    "learnMore": "Learn More"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Everything you need to protect and manage your data in the cloud",
+    "storage": {
+      "title": "Cloud Storage",
+      "tagline": "Secure storage for photos and documents"
+    },
+    "mail": {
+      "title": "Cloud Mail",
+      "tagline": "Professional and secure email"
+    },
+    "backup": {
+      "title": "Cloud Backup",
+      "tagline": "Automatic backup of your devices"
+    }
+  },
+  "whyUs": {
+    "title": "Why Choose CrownServer",
+    "subtitle": "We're different from typical cloud providers",
+    "reason1": {
+      "title": "Italian Simplicity",
+      "description": "Italian interface, Italian support. No complicated technical terms."
+    },
+    "reason2": {
+      "title": "Guaranteed Security",
+      "description": "Advanced encryption and servers in Italy to protect your data."
+    },
+    "reason3": {
+      "title": "Transparent Pricing",
+      "description": "No hidden costs. Pay only for what you use."
+    },
+    "reason4": {
+      "title": "Always Available Support",
+      "description": "Italian team ready to help you when you need it."
+    }
+  },
+  "waitlist": {
+    "title": "Join the Waitlist",
+    "subtitle": "Be among the first to try CrownServer when we launch our services",
+    "emailPlaceholder": "Your email address",
+    "submitButton": "Sign Up",
+    "successMessage": "Thank you! We'll contact you soon.",
+    "closeButton": "Close"
+  },
+  "common": {
+    "comingSoon": "Coming Soon",
+    "learnMore": "Learn More",
+    "readMore": "Read More"
+  },
+  "footer": {
+    "copyright": "Copyright © {year} CrownServer. All rights reserved.",
+    "crownGaming": "Also discover CrownGaming for gaming",
+    "quickLinks": "Quick Links",
+    "followUs": "Follow Us"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Have questions? We're here to help",
+    "email": "Email",
+    "social": "Social Media",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Message sent successfully!",
+      "error": "Error sending message. Please try again."
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "The team behind CrownServer",
+    "foundersTitle": "Our Founders"
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "Complete cloud solutions for all your needs",
+    "features": "Features"
+  }
+}

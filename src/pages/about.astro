@@ -1,57 +1,51 @@
 ---
 import { getCollection } from "astro:content";
-import { Picture } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
+import FounderCard from "@/components/founder-card.astro";
 
-// Filter team entries with 'draft: false' & date before current date
-const publishedTeamMembers = await getCollection("team", ({ data }) => {
+// Get the company story
+const aboutEntries = await getCollection("about");
+const companyStory = aboutEntries.find((entry) => entry.slug === "company-story");
+const { Content } = companyStory ? await companyStory.render() : { Content: null };
+
+// Get founders sorted by order
+const founders = (await getCollection("founders", ({ data }) => {
   return !data.draft && data.publishDate < new Date();
-});
+})).sort((a, b) => a.data.order - b.data.order);
 ---
 
-<Layout title="About">
+<Layout title="Chi Siamo">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">About</Fragment>
-      <Fragment slot="desc">We are a small passionate team.</Fragment>
+      <Fragment slot="title">Chi Siamo</Fragment>
+      <Fragment slot="desc">Il team dietro CrownServer</Fragment>
     </Sectionhead>
 
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800">
-        Empowering the world with Astro.
-      </h2>
-      <p class="text-lg leading-relaxed text-slate-500">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
-      </p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
-      {
-        publishedTeamMembers.map((teamMemberEntry) => (
-          <div class="group">
-            <div class="w-full aspect-square">
-              <Picture
-                src={teamMemberEntry.data.avatar.src}
-                alt={teamMemberEntry.data.avatar.alt}
-                sizes="(max-width: 800px) 100vw, 400px"
-                width={400}
-                height={400}
-                class="w-full rounded-sm transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
-              />
-            </div>
+    {/* Company Story */}
+    {Content && (
+      <div class="prose prose-lg max-w-4xl mx-auto mt-16">
+        <Content />
+      </div>
+    )}
 
-            <div class="mt-4 text-center">
-              <h2 class="text-lg text-gray-800">{teamMemberEntry.data.name}</h2>
-              <h3 class="text-sm text-slate-500">
-                {teamMemberEntry.data.title}
-              </h3>
-            </div>
-          </div>
-        ))
-      }
+    {/* Founders Section */}
+    <div class="mt-24 mb-12">
+      <h2 class="text-4xl font-bold text-center text-[#333333] mb-16">
+        I Nostri Fondatori
+      </h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        {founders.map((founder) => (
+          <FounderCard
+            name={founder.data.name}
+            role={founder.data.role}
+            bio={founder.data.bio}
+            avatarSeed={founder.data.avatar.seed}
+            avatarStyle={founder.data.avatar.style}
+          />
+        ))}
+      </div>
     </div>
   </Container>
 </Layout>

@@ -1,162 +1,380 @@
-# Astroship - Astro SAAS Starter Website Template
+# CrownServer Website
 
-Astroship is a free starter astro website template for saas, startups, marketing websites, landing pages & blogs. Built with Astro & TailwindCSS.
+Il sito web ufficiale di CrownServer - Servizi cloud semplici, sicuri e affidabili per tutta la famiglia.
 
-This Free Template is sponsored by [Web3Templates](https://web3templates.com)
+Costruito con [Astro](https://astro.build) e Tailwind CSS v4.
 
-## Live Demo
+## Live Site
 
-**[https://astroship.web3templates.com/](https://astroship.web3templates.com/)**
+**[https://www.crownserver.it](https://www.crownserver.it)**
 
-**[Download Astroship Template](https://web3templates.com/templates/astroship-starter-website-template-for-astro)**
+## Features
 
-## Upgrade to Astroship Pro Version
+- ✅ Astro 5.5.2
+- ✅ Tailwind CSS v4
+- ✅ Content Collections per gestione strutturata
+- ✅ i18n (Italiano + Inglese)
+- ✅ Responsive Design
+- ✅ Gradient branding (Cyan to Blue)
+- ✅ Waitlist modal (placeholder)
+- ✅ Contact form
+- ✅ Ottimizzato per SEO
+- ✅ Pronto per Netlify
 
-**[https://astroship-pro.web3templates.com/](https://astroship-pro.web3templates.com/)**
+## Getting Started
 
-**[Purchase Astroship Pro — $49](https://web3templates.com/templates/astroship-pro-astro-saas-website-template)**
-
-<!-- prettier-ignore -->
-| Feature | Free Version | Pro Version |
-| --- | ------ | --- |
-| Astro v3 | ✅  | ✅ |
-| Content Collections | ✅  | ✅ |
-| Tailwind CSS   | ✅  | ✅ |
-| Mobile Responsive | ✅  | ✅ |
-| Working Contact Page | ✅  | ✅ |
-| Pro Layouts & Features | ❌  | ✅ |
-| Blog with Pagination | ❌ | ✅ |
-| View Transitions | ❌ | ✅ |
-| Advanced Homepage Design | ❌  | ✅ |
-| Features Page | ❌  | ✅ |
-| Integrations Page | ❌  | ✅ |
-| Elegant 404 Page | ❌  | ✅ |
-| 6 Months Support| ❌  | ✅  |
-| Free Updates    | ✅  | ✅  |
-| License         | GPL-2.0 | Commercial |
-| &nbsp; | &nbsp;| &nbsp;|
-| Pricing| Free|**$49**|
-| &nbsp; | [Deploy for free](https://vercel.com/new/surjithctly/clone?demo-description=Starter%20template%20for%20startups%2C%20marketing%20websites%20%26%20blogs%20built%20with%20Astro%20and%20TailwindCSS.&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F5dB0dDqBr1BfvIoNOmffVB%2F784984a8d3fe5e3db123e7c655166046%2Fastroship_-_Tony_Sullivan.jpg&demo-title=Astroship&demo-url=https%3A%2F%2Fastroship.web3templates.com%2F&from=templates&project-name=Astroship&repository-name=astroship&repository-url=https%3A%2F%2Fgithub.com%2Fsurjithctly%2Fastroship&skippable-integrations=1) | [Purchase Pro](https://web3templates.com/templates/astroship-pro-astro-saas-website-template) |
-
-<a href="https://web3templates.com/templates/astroship-pro-astro-saas-website-template">
-<img width="160" alt="Upgrade to Pro" src="https://user-images.githubusercontent.com/1884712/199181300-37c2128e-d033-4145-a906-16fa5263a53b.png">
-</a>
-
-## Deploy this template
-
-You can instantly clone this to your GitHub and deploy the site by clicking the below buttons to deploy to your chosen providers!
-
-Click here to deploy on Vercel:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsurjithctly%2Fastroship&project-name=astroship&repository-name=astroship&demo-title=Astroship%20-%20Astro%20Starter%20Template&demo-description=Astroship%20is%20a%20starter%20template%20for%20startups%2C%20marketing%20websites%20%26%20landing%20pages.%20Built%20with%20Astro%2C%20TailwindCSS&demo-url=https%3A%2F%2Fastroship.web3templates.com%2F&demo-image=https%3A%2F%2Fuser-images.githubusercontent.com%2F1884712%2F200831799-10ef2456-a02e-4068-b580-4b5326f0b33b.png)
-
-Click here to deploy on Netlify:
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/surjithctly/astroship)
-
-## Preview
-
-![image](https://user-images.githubusercontent.com/1884712/200831799-10ef2456-a02e-4068-b580-4b5326f0b33b.png)
-
-## Pro Version Preview
-
-![preview](https://github.com/surjithctly/astroship/assets/1884712/25665c02-d2a7-43dc-89b2-34a8ae37ade9)
-
-### Pagespeed Score
-
-[![pagespeed](https://user-images.githubusercontent.com/1884712/210250214-7aa98167-7993-4b90-8138-326b8fa0c223.png)](https://pagespeed.web.dev/report?url=https%3A%2F%2Fastroship.web3templates.com%2F)
-
-## Installation
-
-If you are reading this on github, you can click on the "Use this template" button above to create a new repository from astroship to your account. Then you can do a `git clone` to clone it to your local system.
-
-Alternatively, you can clone the project directly from this repo to your local system.
-
-### 1. Clone the repo
-
-```bash
-git clone https://github.com/surjithctly/astroship.git myProjectName
-# or
-git clone https://github.com/surjithctly/astroship.git .
-```
-
-The `.` will clone it to the current directory so make sure you are inside your project folder first.
-
-### 2. Install Dependencies
+### 1. Installare le Dipendenze
 
 ```bash
 npm install
-# or
-yarn install
-# or (recommended)
-pnpm install
 ```
 
-### 3. Start development Server
+### 2. Avviare il Server di Sviluppo
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or (recommended)
-pnpm dev
 ```
 
-### Preview & Build
+Il sito sarà disponibile su `http://localhost:4321`
+
+### 3. Build per Produzione
+
+```bash
+npm run build
+```
+
+### 4. Preview della Build
 
 ```bash
 npm run preview
-npm run build
-# or
-yarn preview
-yarn build
-# or (recommended)
-pnpm preview
-pnpm build
 ```
 
-We recommend using [pnpm](https://pnpm.io/) to save disk space on your computer.
-
-### Other Commands
-
-```bash
-pnpm astro ...
-pnpm astro add
-pnpm astro --help
-```
-
-## Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## Struttura del Progetto
 
 ```
 /
 ├── public/
-│   └── ...
+│   ├── favicon.svg           # Favicon del sito (logo crown)
+│   ├── opengraph.jpg         # Immagine per social sharing
+│   └── robots.txt            # Robots.txt
 ├── src/
+│   ├── assets/
+│   │   └── crown.svg         # Logo crown SVG
 │   ├── components/
-│   │   └── ...
+│   │   ├── logo.astro        # Logo component
+│   │   ├── service-cards.astro
+│   │   ├── waitlist-modal.astro
+│   │   ├── why-choose-us.astro
+│   │   ├── social-links.astro
+│   │   ├── founder-card.astro
+│   │   ├── language-selector.astro
+│   │   ├── navbar/
+│   │   ├── footer.astro
+│   │   └── ui/               # Button, Link components
+│   ├── content/
+│   │   ├── founders/         # 4 founder markdown files
+│   │   ├── products/         # 3 product markdown files
+│   │   └── about/            # Company story
+│   ├── i18n/
+│   │   ├── it.json           # Traduzioni italiane
+│   │   ├── en.json           # Traduzioni inglesi
+│   │   └── translations.ts   # Utilities per i18n
 │   ├── layouts/
-│   │   └── ...
-│   └── pages/
-│       └── ...
+│   │   └── Layout.astro      # Layout principale
+│   ├── pages/
+│   │   ├── index.astro       # Homepage
+│   │   ├── about.astro       # Chi Siamo
+│   │   ├── contact.astro     # Contatti
+│   │   ├── products.astro    # Prodotti
+│   │   └── 404.astro         # Pagina 404
+│   ├── styles/
+│   │   └── global.css        # Stili globali + colori brand
+│   └── utils/
+│       └── i18n.ts           # Helper functions per traduzioni
+├── netlify.toml              # Config Netlify
+├── astro.config.mjs          # Config Astro
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Content Management
 
-Any static assets, like images, can be placed in the `public/` directory.
+### Aggiungere/Modificare Founders
 
-## TailwindCSS
+I founder sono gestiti tramite Astro Content Collections. I file si trovano in `src/content/founders/`.
 
-TailwindCSS is already configured in this repo, so you can start using it without any installation.
+**Esempio di file founder:**
 
-## Credits
+```markdown
+---
+draft: false
+name: "Nome Cognome"
+role: "Ruolo"
+bio: "Breve biografia"
+avatar:
+  seed: "unique-seed"
+  style: "avataaars"
+order: 1
+publishDate: "2026-01-12"
+---
 
-[Hero Illustration](https://www.figma.com/community/file/1108400791662599811) by [Streamline](https://www.streamlinehq.com/)
+Biografia estesa in markdown (opzionale).
+```
 
-## 👀 Want to learn more?
+Gli avatar sono generati usando [Dicebear API](https://dicebear.com/) con il seed specificato.
 
-Feel free to check out [Astro Docs](https://docs.astro.build) or jump into our [Discord Chat](https://web3templates.com/discord).
+### Aggiungere/Modificare Prodotti
 
-[![Built with Astro](https://astro.badg.es/v1/built-with-astro.svg)](https://astro.build)
+I prodotti si trovano in `src/content/products/`.
+
+**Esempio di file prodotto:**
+
+```markdown
+---
+title: "Nome Servizio"
+slug: "nome-servizio"
+icon: "bx:icon-name"
+tagline: "Breve descrizione"
+status: "coming-soon"
+features:
+  - "Feature 1"
+  - "Feature 2"
+  - "Feature 3"
+order: 1
+---
+
+Descrizione dettagliata del servizio in markdown.
+Puoi usare ## per sottotitoli, liste, etc.
+```
+
+### Modificare la Company Story
+
+Il contenuto "Chi Siamo" si trova in `src/content/about/company-story.md`.
+
+Modifica questo file per aggiornare la storia dell'azienda.
+
+## Traduzioni (i18n)
+
+Le traduzioni sono gestite tramite file JSON in `src/i18n/`.
+
+### Struttura delle Traduzioni
+
+```json
+{
+  "nav": {
+    "products": "Prodotti",
+    "about": "Chi Siamo"
+  },
+  "hero": {
+    "title": "Il cloud semplice per tutta la famiglia"
+  }
+}
+```
+
+### Aggiungere Nuove Traduzioni
+
+1. Aggiungi la chiave in `src/i18n/it.json`
+2. Aggiungi la traduzione corrispondente in `src/i18n/en.json`
+3. Usa nel componente: `t(lang, 'chiave.sottochiave')`
+
+### Come Funziona
+
+- La lingua di default è l'italiano
+- L'utente può cambiare lingua tramite il selector nell'header
+- La scelta viene salvata in localStorage
+- Le pagine si ricaricano per applicare la nuova lingua
+
+## Styling & Branding
+
+### Colori Brand
+
+I colori sono definiti in `src/styles/global.css`:
+
+```css
+@theme {
+  --color-crown-cyan: #00c6fb;
+  --color-crown-blue: #005bea;
+  --color-crown-bg: #F5F7FA;
+  --color-crown-text: #333333;
+}
+```
+
+### Utility Classes Personalizzate
+
+```css
+.gradient-crown {
+  background: linear-gradient(135deg, #00c6fb 0%, #005bea 100%);
+}
+
+.text-gradient-crown {
+  background: linear-gradient(135deg, #00c6fb 0%, #005bea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+```
+
+### Cambiare i Colori
+
+Per cambiare i colori del brand:
+
+1. Modifica le variabili CSS in `src/styles/global.css`
+2. Aggiorna i gradienti nelle utility classes
+3. Il resto del sito si aggiornerà automaticamente
+
+### Componenti UI
+
+I componenti Button e Link supportano diversi stili:
+
+```astro
+<!-- Gradient button (primary) -->
+<Button style="primary">Click Me</Button>
+
+<!-- Outline button -->
+<Button style="outline">Click Me</Button>
+
+<!-- Inverted button -->
+<Button style="inverted">Click Me</Button>
+```
+
+## Deployment
+
+### Netlify (Recommended)
+
+Il sito è configurato per Netlify con `netlify.toml`:
+
+```toml
+[build]
+  command = "npm run build"
+  publish = "dist"
+```
+
+**Steps:**
+
+1. Push del codice su GitHub
+2. Connetti il repo a Netlify
+3. Netlify rileverà automaticamente le impostazioni
+4. Deploy!
+
+### Altri Providers
+
+Il sito può essere deployato su qualsiasi provider che supporta siti statici:
+
+- **Vercel**: Aggiungi il progetto e seleziona Astro
+- **Cloudflare Pages**: Comando: `npm run build`, Output: `dist`
+- **GitHub Pages**: Usa GitHub Actions con l'action ufficiale di Astro
+
+## Link Social Media
+
+I link social sono definiti in `src/components/social-links.astro`:
+
+```typescript
+const socialLinks = [
+  { name: 'Discord', url: 'https://discord.gg/crownserver', icon: 'simple-icons:discord' },
+  { name: 'X (Twitter)', url: 'https://x.com/crownserver', icon: 'simple-icons:x' },
+  // ...
+];
+```
+
+Aggiorna gli URL con i tuoi account social reali.
+
+## Contact Form
+
+Il form di contatto utilizza Web3Forms. Per renderlo funzionante:
+
+1. Registrati su [Web3Forms](https://web3forms.com/)
+2. Ottieni la tua Access Key
+3. Aggiorna `src/components/contactform.astro` con la tua key
+
+## Waitlist Modal
+
+Il modal della waitlist è **placeholder only** (design senza backend).
+
+Per renderlo funzionale:
+
+1. Integra con un servizio email (Mailchimp, ConvertKit, etc.)
+2. Aggiorna lo script in `src/components/waitlist-modal.astro`
+3. Implementa la chiamata API quando il form viene submitted
+
+## SEO
+
+### Meta Tags
+
+I meta tags sono gestiti in `src/layouts/Layout.astro`:
+
+- Title
+- Description
+- OpenGraph tags
+- Twitter cards
+
+### Sitemap
+
+Il sitemap viene generato automaticamente da Astro e sarà disponibile su `/sitemap-index.xml`.
+
+## Performance
+
+Il sito è ottimizzato per performance:
+
+- ✅ Static Site Generation (SSG)
+- ✅ Immagini ottimizzate
+- ✅ CSS minificato
+- ✅ Font ottimizzati
+- ✅ Lazy loading
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## Tech Stack
+
+- **Framework**: Astro 5.5.2
+- **Styling**: Tailwind CSS v4
+- **Icons**: Astro Icon (Iconify)
+- **Fonts**: Inter Variable, Bricolage Grotesque
+- **Content**: Astro Content Collections
+- **SEO**: astro-seo
+
+## Cross-linking con CrownGaming
+
+Il footer include un link a [CrownGaming](https://www.crowngaming.it), il sito fratello dedicato al gaming.
+
+Per modificare o rimuovere questo link, edita `src/components/footer.astro`.
+
+## Troubleshooting
+
+### Build Errors
+
+Se riscontri errori durante il build:
+
+1. Verifica che tutte le dipendenze siano installate: `npm install`
+2. Pulisci la cache: `rm -rf node_modules .astro && npm install`
+3. Controlla che i file markdown in `/content` abbiano frontmatter valido
+
+### i18n Non Funziona
+
+1. Verifica che localStorage sia abilitato nel browser
+2. Controlla la console per errori JavaScript
+3. Verifica che i file JSON in `/i18n` siano validi
+
+### Stili Non Applicati
+
+1. Verifica che `global.css` sia importato in `Layout.astro`
+2. Controlla che Tailwind stia processando i file correttamente
+3. Riavvia il dev server
+
+## Support
+
+Per domande o supporto:
+
+- **Email**: staff@crownserver.it
+- **GitHub Issues**: [Apri un issue](https://github.com/crownserver/www.crownserver.it/issues)
+
+## License
+
+Copyright © 2026 CrownServer. All rights reserved.
+
+---
+
+Costruito con ❤️ dal team di CrownServer

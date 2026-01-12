@@ -1,0 +1,41 @@
+---
+interface Props {
+  name: string;
+  role: string;
+  bio?: string;
+  avatarSeed: string;
+  avatarStyle?: string;
+}
+
+const { name, role, bio, avatarSeed, avatarStyle = 'avataaars' } = Astro.props;
+
+const avatarUrl = `https://api.dicebear.com/7.x/${avatarStyle}/svg?seed=${avatarSeed}`;
+---
+
+<div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+  {/* Avatar */}
+  <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-gray-100 group-hover:ring-[#00c6fb]/30 transition">
+    <img
+      src={avatarUrl}
+      alt={name}
+      class="w-full h-full object-cover"
+    />
+  </div>
+
+  {/* Name */}
+  <h3 class="text-2xl font-bold text-[#333333] text-center mb-2">
+    {name}
+  </h3>
+
+  {/* Role */}
+  <p class="text-gradient-crown font-medium text-center mb-4">
+    {role}
+  </p>
+
+  {/* Bio */}
+  {bio && (
+    <p class="text-gray-600 text-center text-sm leading-relaxed">
+      {bio}
+    </p>
+  )}
+</div>
