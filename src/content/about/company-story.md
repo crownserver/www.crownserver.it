@@ -1,6 +1,7 @@
 ---
 title: "La Storia di CrownServer"
 description: "Nati dalla passione per la tecnologia e dalla volontà di rendere il cloud accessibile a tutti"
+lang: "it"
 ---
 
 ## La Nostra Missione

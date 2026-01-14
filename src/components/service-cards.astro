@@ -1,46 +1,63 @@
 ---
-import { getCollection } from 'astro:content';
 import { Icon } from 'astro-icon/components';
 import Container from './container.astro';
+import { getLangFromUrl, t, getLocalizedPath } from "@/utils/i18n";
 
-// Get products collection sorted by order
-const products = (await getCollection('products')).sort((a, b) => a.data.order - b.data.order);
+const lang = getLangFromUrl(Astro.url);
+
+const services = [
+  {
+    key: 'storage',
+    icon: 'bx:cloud',
+    status: 'coming-soon'
+  },
+  {
+    key: 'mail',
+    icon: 'bx:envelope',
+    status: 'coming-soon'
+  },
+  {
+    key: 'backup',
+    icon: 'bx:data',
+    status: 'coming-soon'
+  }
+];
 ---
 
 <Container>
   <div class="grid md:grid-cols-3 gap-8 mt-16">
-    {products.map((product) => (
+    {services.map((service) => (
       <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
         {/* Coming Soon Badge */}
-        {product.data.status === 'coming-soon' && (
+        {service.status === 'coming-soon' && (
           <div class="absolute top-4 right-4">
             <span class="gradient-crown text-white text-xs font-bold px-3 py-1 rounded-full">
-              In arrivo
+              {t(lang, "common.comingSoon")}
             </span>
           </div>
         )}
 
         {/* Icon */}
         <div class="w-16 h-16 gradient-crown rounded-xl flex items-center justify-center mb-6">
-          <Icon name={product.data.icon} class="w-8 h-8 text-white" />
+          <Icon name={service.icon} class="w-8 h-8 text-white" />
         </div>
 
         {/* Title */}
         <h3 class="text-2xl font-bold text-[#333333] mb-3">
-          {product.data.title}
+          {t(lang, `services.${service.key}.title`)}
         </h3>
 
         {/* Tagline */}
         <p class="text-gray-600 mb-6">
-          {product.data.tagline}
+          {t(lang, `services.${service.key}.tagline`)}
         </p>
 
         {/* Learn More Link */}
         <a
-          href="/products"
+          href={getLocalizedPath("/products", lang)}
           class="inline-flex items-center gap-2 text-[#005bea] font-medium hover:gap-3 transition-all"
         >
-          Scopri di più
+          {t(lang, "common.learnMore")}
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
           </svg>

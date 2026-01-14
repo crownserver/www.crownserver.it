@@ -11,6 +11,7 @@ features:
   - "Accesso da qualsiasi dispositivo"
   - "Crittografia end-to-end"
 order: 1
+lang: "it"
 ---
 
 ## Il tuo spazio personale nel cloud

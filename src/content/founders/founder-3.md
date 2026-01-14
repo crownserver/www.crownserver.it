@@ -7,6 +7,7 @@ avatar:
   seed: "founder3"
   style: "avataaars"
 order: 3
+lang: "it"
 publishDate: "2026-01-12"
 ---
 

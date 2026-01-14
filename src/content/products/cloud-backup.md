@@ -11,6 +11,7 @@ features:
   - "Backup incrementale per risparmiare spazio"
   - "Notifiche in tempo reale"
 order: 3
+lang: "it"
 ---
 
 ## La tranquillità di sapere che i tuoi dati sono al sicuro

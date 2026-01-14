@@ -11,6 +11,7 @@ features:
   - "Calendario e contatti sincronizzati"
   - "Supporto IMAP, POP3 e SMTP"
 order: 2
+lang: "it"
 ---
 
 ## Email professionale per tutta la famiglia

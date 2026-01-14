@@ -14,6 +14,7 @@ const foundersCollection = defineCollection({
     }),
     order: z.number(),
     publishDate: z.string().transform(str => new Date(str)),
+    lang: z.enum(['it', 'en']).default('it'),
   }),
 });
 
@@ -26,6 +27,7 @@ const productsCollection = defineCollection({
     status: z.enum(['coming-soon', 'active']).default('coming-soon'),
     features: z.array(z.string()),
     order: z.number(),
+    lang: z.enum(['it', 'en']).default('it'),
   }),
 });
 
@@ -34,6 +36,7 @@ const aboutCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    lang: z.enum(['it', 'en']).default('it'),
   }),
 });
 

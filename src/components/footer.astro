@@ -2,6 +2,10 @@
 import Container from "./container.astro";
 import Logo from "./logo.astro";
 import SocialLinks from "./social-links.astro";
+import { getLangFromUrl, t, getLocalizedPath } from "@/utils/i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const currentYear = new Date().getFullYear().toString();
 ---
 
 <footer class="my-20 border-t border-gray-200 pt-16">
@@ -11,7 +15,7 @@ import SocialLinks from "./social-links.astro";
       <div>
         <Logo size="medium" />
         <p class="text-gray-600 mt-4 text-sm leading-relaxed">
-          Servizi cloud semplici, sicuri e affidabili per tutta la famiglia.
+          {t(lang, lang === "en" ? "hero.subtitle" : "hero.subtitle")}
         </p>
         <p class="mt-6 text-sm">
           <a
@@ -20,28 +24,28 @@ import SocialLinks from "./social-links.astro";
             rel="noopener noreferrer"
             class="text-[#005bea] hover:underline font-medium"
           >
-            Scopri anche CrownGaming per il gaming →
+            {t(lang, "footer.crownGaming")} →
           </a>
         </p>
       </div>
 
       {/* Column 2: Quick Links */}
       <div>
-        <h3 class="font-bold text-[#333333] mb-4">Link Rapidi</h3>
+        <h3 class="font-bold text-[#333333] mb-4">{t(lang, "footer.quickLinks")}</h3>
         <ul class="space-y-3">
           <li>
-            <a href="/products" class="text-gray-600 hover:text-[#005bea] transition text-sm">
-              Prodotti
+            <a href={getLocalizedPath("/products", lang)} class="text-gray-600 hover:text-[#005bea] transition text-sm">
+              {t(lang, "nav.products")}
             </a>
           </li>
           <li>
-            <a href="/about" class="text-gray-600 hover:text-[#005bea] transition text-sm">
-              Chi Siamo
+            <a href={getLocalizedPath("/about", lang)} class="text-gray-600 hover:text-[#005bea] transition text-sm">
+              {t(lang, "nav.about")}
             </a>
           </li>
           <li>
-            <a href="/contact" class="text-gray-600 hover:text-[#005bea] transition text-sm">
-              Contatti
+            <a href={getLocalizedPath("/contact", lang)} class="text-gray-600 hover:text-[#005bea] transition text-sm">
+              {t(lang, "nav.contact")}
             </a>
           </li>
         </ul>
@@ -49,7 +53,7 @@ import SocialLinks from "./social-links.astro";
 
       {/* Column 3: Social */}
       <div>
-        <h3 class="font-bold text-[#333333] mb-4">Seguici</h3>
+        <h3 class="font-bold text-[#333333] mb-4">{t(lang, "footer.followUs")}</h3>
         <SocialLinks variant="default" />
       </div>
     </div>
@@ -57,7 +61,7 @@ import SocialLinks from "./social-links.astro";
     {/* Bottom Copyright */}
     <div class="border-t border-gray-200 pt-8 text-center">
       <p class="text-sm text-gray-600">
-        Copyright © {new Date().getFullYear()} CrownServer. Tutti i diritti riservati.
+        {t(lang, "footer.copyright", { year: currentYear })}
       </p>
     </div>
   </Container>

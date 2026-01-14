@@ -34,7 +34,7 @@
 </div>
 
 <script>
-  import { getCurrentLanguage, setLanguage, type Language } from '@/utils/i18n';
+  import { getCurrentLanguage, switchLanguage, type Language } from '@/utils/i18n';
 
   // Initialize language selector
   function initLanguageSelector() {
@@ -64,8 +64,7 @@
     langOptions.forEach((option) => {
       option.addEventListener('click', (e) => {
         const lang = (e.currentTarget as HTMLElement).getAttribute('data-lang') as Language;
-        setLanguage(lang);
-        window.location.reload(); // Reload to apply new language
+        switchLanguage(lang);
       });
     });
   }
