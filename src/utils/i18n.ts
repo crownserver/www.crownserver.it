@@ -45,30 +45,52 @@ export function t(lang: Language, key: TranslationKey, replacements?: Record<str
   return translation;
 }
 
-// Get current language from browser or localStorage
+// Get current language from URL
+export function getLangFromUrl(url: URL): Language {
+  const [, lang] = url.pathname.split('/');
+  if (lang && languages.includes(lang as Language)) {
+    return lang as Language;
+  }
+  return defaultLang;
+}
+
+// Get current language from browser location
 export function getCurrentLanguage(): Language {
   if (typeof window === 'undefined') {
     return defaultLang;
   }
 
-  // Check localStorage first
-  const stored = localStorage.getItem('crownserver-lang');
-  if (stored && languages.includes(stored as Language)) {
-    return stored as Language;
-  }
-
-  // Fall back to browser language
-  const browserLang = navigator.language.split('-')[0];
-  if (languages.includes(browserLang as Language)) {
-    return browserLang as Language;
-  }
-
-  return defaultLang;
+  return getLangFromUrl(new URL(window.location.href));
 }
 
-// Set language preference
-export function setLanguage(lang: Language): void {
-  if (typeof window !== 'undefined') {
-    localStorage.setItem('crownserver-lang', lang);
+// Get localized path for a given route
+export function getLocalizedPath(path: string, lang: Language): string {
+  // Remove leading slash if present
+  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+
+  // For default language (Italian), don't add prefix
+  if (lang === defaultLang) {
+    return cleanPath;
   }
+
+  // For other languages, add prefix
+  return `/${lang}${cleanPath}`;
+}
+
+// Switch to a different language by navigating to the localized URL
+export function switchLanguage(lang: Language): void {
+  if (typeof window === 'undefined') return;
+
+  const currentUrl = new URL(window.location.href);
+  const currentLang = getLangFromUrl(currentUrl);
+
+  // Get the path without language prefix
+  let path = currentUrl.pathname;
+  if (currentLang !== defaultLang) {
+    path = path.replace(`/${currentLang}`, '') || '/';
+  }
+
+  // Navigate to the new language path
+  const newPath = getLocalizedPath(path, lang);
+  window.location.href = newPath;
 }

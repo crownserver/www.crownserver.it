@@ -1,0 +1,97 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/container.astro";
+import Sectionhead from "@/components/sectionhead.astro";
+import WaitlistCta from "@/components/waitlist-cta.astro";
+import { Icon } from "astro-icon/components";
+
+// Get products sorted by order
+const products = (await getCollection("products")).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Layout title="I Nostri Prodotti">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">I Nostri Prodotti</Fragment>
+      <Fragment slot="desc">
+        Soluzioni cloud complete per tutte le tue esigenze
+      </Fragment>
+    </Sectionhead>
+
+    <div class="mt-16 space-y-24">
+      {products.map(async (product, index) => {
+        const { Content } = await product.render();
+        const isEven = index % 2 === 0;
+
+        return (
+          <div class={`grid lg:grid-cols-2 gap-12 items-center ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}>
+            {/* Icon/Image Side */}
+            <div class={`${!isEven ? 'lg:col-start-2' : ''}`}>
+              <div class="aspect-square max-w-md mx-auto gradient-crown rounded-3xl flex items-center justify-center relative overflow-hidden">
+                {/* Decorative elements */}
+                <div class="absolute inset-0 opacity-10">
+                  <div class="absolute top-10 left-10 w-32 h-32 bg-white rounded-full"></div>
+                  <div class="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full"></div>
+                </div>
+                {/* Icon */}
+                <div class="relative z-10">
+                  <Icon name={product.data.icon} class="w-48 h-48 text-white" />
+                </div>
+              </div>
+            </div>
+
+            {/* Content Side */}
+            <div class={`${!isEven ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+              {/* Coming Soon Badge */}
+              {product.data.status === 'coming-soon' && (
+                <span class="inline-block gradient-crown text-white text-sm font-bold px-4 py-2 rounded-full mb-4">
+                  In arrivo
+                </span>
+              )}
+
+              {/* Title */}
+              <h2 class="text-4xl font-bold text-[#333333] mb-4">
+                {product.data.title}
+              </h2>
+
+              {/* Tagline */}
+              <p class="text-xl text-gray-600 mb-6">
+                {product.data.tagline}
+              </p>
+
+              {/* Content */}
+              <div class="prose prose-lg max-w-none mb-8">
+                <Content />
+              </div>
+
+              {/* Features List */}
+              {product.data.features && product.data.features.length > 0 && (
+                <div class="mb-8">
+                  <h3 class="text-lg font-bold text-[#333333] mb-4">
+                    Caratteristiche Principali
+                  </h3>
+                  <ul class="space-y-3">
+                    {product.data.features.map((feature) => (
+                      <li class="flex items-start gap-3">
+                        <div class="flex-shrink-0 w-6 h-6 gradient-crown rounded-full flex items-center justify-center mt-0.5">
+                          <Icon name="bx:check" class="w-4 h-4 text-white" />
+                        </div>
+                        <span class="text-gray-700">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+    {/* Waitlist CTA at bottom */}
+    <div class="mt-24">
+      <WaitlistCta />
+    </div>
+  </Container>
+</Layout>

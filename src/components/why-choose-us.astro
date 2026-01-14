@@ -1,28 +1,15 @@
 ---
 import Container from './container.astro';
 import { Icon } from 'astro-icon/components';
+import { getLangFromUrl, t } from "@/utils/i18n";
+
+const lang = getLangFromUrl(Astro.url);
 
 const reasons = [
-  {
-    icon: 'bx:globe',
-    title: 'Semplicità Italiana',
-    description: 'Interfaccia in italiano, supporto in italiano. Niente termini tecnici complicati.',
-  },
-  {
-    icon: 'bx:shield-alt-2',
-    title: 'Sicurezza Garantita',
-    description: 'Crittografia avanzata e server in Italia per proteggere i tuoi dati.',
-  },
-  {
-    icon: 'bx:dollar-circle',
-    title: 'Prezzi Trasparenti',
-    description: 'Niente costi nascosti. Paga solo per quello che usi.',
-  },
-  {
-    icon: 'bx:support',
-    title: 'Supporto Sempre Disponibile',
-    description: 'Team italiano pronto ad aiutarti quando ne hai bisogno.',
-  },
+  { icon: 'bx:globe', key: 'reason1' },
+  { icon: 'bx:shield-alt-2', key: 'reason2' },
+  { icon: 'bx:dollar-circle', key: 'reason3' },
+  { icon: 'bx:support', key: 'reason4' },
 ];
 ---
 
@@ -30,10 +17,10 @@ const reasons = [
   <Container>
     <div class="text-center mb-16">
       <h2 class="text-4xl md:text-5xl font-bold text-[#333333] mb-4">
-        Perché Scegliere CrownServer
+        {t(lang, "whyUs.title")}
       </h2>
       <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-        Siamo diversi dai soliti provider cloud
+        {t(lang, "whyUs.subtitle")}
       </p>
     </div>
 
@@ -46,10 +33,10 @@ const reasons = [
             </div>
           </div>
           <h3 class="text-xl font-bold text-[#333333] mb-3">
-            {reason.title}
+            {t(lang, `whyUs.${reason.key}.title`)}
           </h3>
           <p class="text-gray-600">
-            {reason.description}
+            {t(lang, `whyUs.${reason.key}.description`)}
           </p>
         </div>
       ))}

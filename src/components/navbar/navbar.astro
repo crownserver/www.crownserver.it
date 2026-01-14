@@ -4,22 +4,25 @@ import Logo from "@/components/logo.astro";
 import LanguageSelector from "@/components/language-selector.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import { getLangFromUrl, t, getLocalizedPath } from "@/utils/i18n";
+
+const lang = getLangFromUrl(Astro.url);
 
 const menuitems = [
   {
-    title: "Prodotti",
-    path: "/products",
+    title: t(lang, "nav.products"),
+    path: getLocalizedPath("/products", lang),
   },
   {
-    title: "Chi Siamo",
-    path: "/about",
+    title: t(lang, "nav.about"),
+    path: getLocalizedPath("/about", lang),
   },
   {
-    title: "Contatti",
-    path: "/contact",
+    title: t(lang, "nav.contact"),
+    path: getLocalizedPath("/contact", lang),
   },
   {
-    title: "Social",
+    title: t(lang, "nav.social"),
     path: "#",
     children: [
       { title: "Discord", path: "https://discord.gg/crownserver" },
@@ -36,7 +39,7 @@ const menuitems = [
   <header class="flex flex-col lg:flex-row justify-between items-center my-5">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/">
+        <a href={getLocalizedPath("/", lang)}>
           <Logo size="medium" />
         </a>
         <div class="block lg:hidden">
