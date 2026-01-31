@@ -16,7 +16,7 @@
 // }
 {
   "name": "crownserver",
-  "compatibility_date": "2026-01-30", // Update to the day you deploy
+  "compatibility_date": "2026-01-31", // Update to the day you deploy
   "assets": {
     "directory": "./dist"
   }
